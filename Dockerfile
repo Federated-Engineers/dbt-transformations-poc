@@ -11,7 +11,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 # add execute permissions to the entrypoint script
-RUN chmod -r 755 scripts/run_dbt.sh
+RUN chmod -R 755 scripts/run_dbt.sh
 
 ENTRYPOINT [ "/bin/sh", "-c"]
 CMD ["scripts/run_dbt.sh"]
