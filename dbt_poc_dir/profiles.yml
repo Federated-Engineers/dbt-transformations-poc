@@ -1,0 +1,12 @@
+dbt_poc:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      host: "{{ env_var('REDSHIFT_HOST') }}"
+      user: "{{ env_var('REDSHIFT_USER') }}"
+      password: "{{ env_var('REDSHIFT_PASSWORD') }}"
+      port: 5439
+      dbname: dev
+      schema: "dbt_analytics"  # The schema where dbt will build your table
+      threads: 4

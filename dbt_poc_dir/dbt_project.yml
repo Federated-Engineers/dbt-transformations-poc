@@ -1,0 +1,11 @@
+name: 'my_redshift_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_poc' # <--- MUST MATCH profiles.yml
+
+model-paths: ["models"]
+
+models:
+  my_redshift_project:
+    +materialized: table # This tells dbt to create actual tables in Redshift
